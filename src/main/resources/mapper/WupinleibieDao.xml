@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.WupinleibieDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.WupinleibieEntity" id="wupinleibieMap">
+        <result property="wupinleibie" column="wupinleibie"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.WupinleibieVO" >
+		SELECT * FROM wupinleibie  wupinleibie         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.WupinleibieVO" >
+		SELECT  wupinleibie.* FROM wupinleibie  wupinleibie 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.WupinleibieView" >
+
+		SELECT  wupinleibie.* FROM wupinleibie  wupinleibie 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.WupinleibieView" >
+		SELECT * FROM wupinleibie  wupinleibie <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
